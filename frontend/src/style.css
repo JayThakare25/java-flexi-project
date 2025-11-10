@@ -1,0 +1,107 @@
+/* ---------- Theme ---------- */
+:root{
+  --bg: #0b0e13;
+  --panel: #111722;
+  --muted: #8ea0b5;
+  --text: #e6eef8;
+  --brand: #6aa5ff;
+  --brand-2: #8f77ff;
+  --danger: #ff6b6b;
+  --radius: 14px;
+  --shadow: 0 10px 30px rgba(0,0,0,.35);
+}
+
+*{box-sizing:border-box}
+html,body,#root{height:100%}
+body{
+  margin:0;
+  background: radial-gradient(1200px 800px at 20% -10%, #0f1420 0%, #0b0e13 40%) no-repeat, var(--bg);
+  color:var(--text);
+  font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif;
+}
+
+/* ---------- Layout ---------- */
+.shell{
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+.card{
+  background: linear-gradient(180deg, #141b28 0%, #0f1623 100%);
+  border: 1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.panel{ padding: 22px; }
+
+/* ---------- Top Nav ---------- */
+.nav{
+  display:flex; align-items:center; gap:14px;
+  background: rgba(255,255,255,.02);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius: var(--radius);
+  padding:10px 12px; margin-bottom:16px;
+  backdrop-filter: blur(4px);
+}
+.nav a{
+  color:var(--muted); text-decoration:none; padding:8px 12px; border-radius:10px;
+  transition: all .2s ease;
+}
+.nav a:hover{ color:var(--text); background: rgba(255,255,255,.06); }
+.nav .brand{
+  margin-right:auto; font-weight:700; letter-spacing:.3px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+
+/* ---------- Forms ---------- */
+.form{ display:grid; gap:10px; }
+.input{
+  width:100%; padding:12px 14px; border-radius: 12px;
+  background:#0c1320; color:var(--text);
+  border:1px solid rgba(255,255,255,.08); outline:none;
+}
+.input:focus{ border-color: var(--brand); box-shadow: 0 0 0 3px rgba(106,165,255,.15); }
+
+.btn{
+  appearance:none; border:0; cursor:pointer;
+  padding:12px 16px; border-radius:12px;
+  background: linear-gradient(90deg, var(--brand), var(--brand-2));
+  color:#08111f; font-weight:700;
+  transition: transform .05s ease, filter .2s ease;
+}
+.btn:hover{ filter:brightness(1.05) }
+.btn:active{ transform: translateY(1px) }
+
+.btn-ghost{
+  background: transparent; color: var(--text);
+  border:1px solid rgba(255,255,255,.1)
+}
+.btn-danger{
+  background: #2a1212; color:#ffd6d6; border:1px solid rgba(255,255,255,.1)
+}
+
+.help{ color:var(--muted); font-size:.92rem }
+.alert{ color: var(--danger); font-weight:600; }
+
+/* ---------- Grids / Lists ---------- */
+.grid{ display:grid; gap:14px; }
+.grid-3{ grid-template-columns: repeat(3, minmax(0,1fr)); }
+@media (max-width: 900px){ .grid-3{ grid-template-columns:1fr 1fr; } }
+@media (max-width: 600px){ .grid-3{ grid-template-columns:1fr; } }
+
+.hotel{
+  padding:16px; border-radius:12px;
+  background: rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+}
+.hotel h4{ margin:0 0 6px }
+.hotel span{ color: var(--muted); font-size:.9rem }
+
+/* ---------- Utilities ---------- */
+.mt-2{ margin-top:8px }
+.mt-3{ margin-top:14px }
+.mt-4{ margin-top:20px }
+.center{ display:flex; align-items:center; justify-content:center }
